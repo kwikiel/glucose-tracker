@@ -9,7 +9,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>{% block title %}{{ site_name }} | Simple Glucose Management App{% endblock %}</title>
+        <title>{% block title %}{{ site_name }} | {% trans "Diabetix" %} {% endblock %}</title>
 
         <!-- CSS -->
         {% compress css %}
@@ -44,10 +44,10 @@
                 </button>
                 {% if user.is_authenticated %}
                 <a class="navbar-brand" href="{% url 'dashboard' %}">
-                  <span class="glyphicon glyphicon-tint"></span> GlucoseTracker</a>
+                  <span class="glyphicon glyphicon-tint"></span> Diabetix</a>
                 {% else %}
                 <a class="navbar-brand" href="/">
-                  <span class="glyphicon glyphicon-tint"></span> GlucoseTracker</a>
+                  <span class="glyphicon glyphicon-tint"></span> Diabetix</a>
                 {% endif %}
             </div>
 
@@ -56,21 +56,21 @@
               <ul class="nav navbar-nav navbar-right">
                   {% if user.is_authenticated %}
                     <li><a href="{% url 'glucose_create' %}">
-                        <span class="glyphicon glyphicon-plus"></span>&nbsp;New Glucose</a>
+                        <span class="glyphicon glyphicon-plus"></span>&nbsp;{% trans "New Glucose" %}</a>
                     </li>
 
                     <li><a href="{% url 'dashboard' %}">
-                        <span class="glyphicon glyphicon-th"></span>&nbsp;Dashboard</a>
+                        <span class="glyphicon glyphicon-th"></span>&nbsp;{% trans "Dashboard" %}</a>
                     </li>
 
                     <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                         <span class="glyphicon glyphicon-stats"></span>&nbsp;Reports <b class="caret"></b></a>
+                         <span class="glyphicon glyphicon-stats"></span>&nbsp;{% trans "Reports" %} <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                      <li><a href="{% url 'glucose_filter' %}">Filter Data</a></li>
-                      <li><a href="{% url 'glucose_charts' %}">Charts & Graphs</a></li>
+                      <li><a href="{% url 'glucose_filter' %}">{% trans "Filter Data" %}</a></li>
+                      <li><a href="{% url 'glucose_charts' %}">{% trans "Charts & Graphs" %}</a></li>
                       <li class="divider"></li>
-                      <li><a href="{% url 'glucose_email_report' %}">Email Report</a></li>
+                      <li><a href="{% url 'glucose_email_report' %}">{% trans "Email Report" %}</a></li>
                     </ul>
                     </li>
 
@@ -79,24 +79,24 @@
                         <span class="glyphicon glyphicon-user"></span>&nbsp;
                         {{ user }} <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                      <li><a href="{% url 'usersettings' %}">Account Settings</a></li>
-                      <li><a href="{% url 'password_change' %}">Change Password</a></li>
+                      <li><a href="{% url 'usersettings' %}">{% trans "Account Settings" %}</a></li>
+                      <li><a href="{% url 'password_change' %}">{% trans "Change Password" %} </a></li>
                       <li class="divider"></li>
-                      <li><a href="{% url 'glucose_import' %}">Import Data from CSV</a></li>
+                      <li><a href="{% url 'glucose_import' %}">{% trans "Import Data from CSV" %}</a></li>
                       <li class="divider"></li>
-                      <li><a href="{% url 'help' %}">Help</a></li>
+                      <li><a href="{% url 'help' %}">{% trans "Help" %}</a></li>
                       <li class="divider"></li>
-                      <li><a href="{% url 'logout' %}">Log Out</a></li>
+                      <li><a href="{% url 'logout' %}">{% trans "Log Out" %}</a></li>
                     </ul>
                     </li>
                   {% else %}
                     <form class="navbar-form navbar-right">
                     <button type="button" class="btn btn-primary"
                         onclick="location.href=&quot;{% url 'login' %}&quot;;">
-                        Log In</button>
+                        {% trans "Log In" %}</button>
                     <button type="button" class="btn btn-success"
                         onclick="location.href=&quot;{% url 'signup' %}&quot;;">
-                        Sign Up (Free!)</button>
+                        {% trans "Sign Up (Free!)" %}</button>
                     </form>
                   {% endif %}
               </ul>
@@ -124,10 +124,10 @@
                 <footer>
                   <p class="pull-right"><a href="#">Back to top</a></p>
                   <p class="text-muted">
-                      &copy; 2014 GlucoseTracker.net by <a href="http://www.calazan.com">Jonathan Calazan</a>
+                      &copy;2014 Diabetix <a href="http://instytut.info">Diabetix</a>
                       | <a href="{% url 'blog_list_view' %}">Blog</a>
-                      | <a href="https://www.facebook.com/glucose.tracker/info">About GlucoseTracker</a>
-                      | <a href="mailto:info@glucosetracker.net">Contact Us</a>
+                      | <a href="https://www.facebook.com/diabetix">{% trans "About Diabetix" %}</a>
+                      | <a href="mailto:contact@diabetix.pl">{% trans "Contact Us" %}</a>
                   </p>
                 </footer>
             </div>
