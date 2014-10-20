@@ -6,10 +6,10 @@
 
 {% block heading %}
 <h3>
-    <span class="glyphicon glyphicon-envelope"></span> Email Report
+    <span class="glyphicon glyphicon-envelope"></span> {% trans "Email Report" %}
     <small>
-        <a href="{% url 'glucose_filter' %}">Filter Data</a>
-        | <a href="{% url 'glucose_charts' %}">Charts & Graphs</a>
+        <a href="{% url 'glucose_filter' %}">{% trans "Filter Data" %}</a>
+        | <a href="{% url 'glucose_charts' %}">{% trans "Charts & Graphs" %}</a>
     </small>
 </h3>
 {% endblock %}
