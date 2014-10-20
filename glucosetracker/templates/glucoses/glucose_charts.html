@@ -2,10 +2,10 @@
 
 {% block heading %}
 <h3>
-    <span class="glyphicon glyphicon-stats"></span> Charts & Graphs
+    <span class="glyphicon glyphicon-stats"></span> {% trans "Charts & Graphs" %}
     <small>
-        <a href="{% url 'glucose_filter' %}">Filter Data</a>
-        | <a href="{% url 'glucose_email_report' %}">Email Report</a>
+        <a href="{% url 'glucose_filter' %}">{% trans "Filter Data" %}</a>
+        | <a href="{% url 'glucose_email_report' %}">{% trans "Email Report" %}</a>
     </small>
 </h3>
 {% endblock %}
@@ -100,7 +100,7 @@
             <div class="panel-heading">
                 <h4 class="panel-title">
                     <a class="accordion-toggle" data-toggle="collapse" data-target="#collapseBody1">
-                        Average Glucose by Category
+                       {% trans  "Average Glucose by Category" %}
                         <span class="glyphicon glyphicon-chevron-up pull-right"></span>
                     </a>
                 </h4>
@@ -109,10 +109,10 @@
                 <div class="row">
                     <div class="col-sm-4 col-md-4">
                         <select id="avgByCategorySelect" class="form-control input-sm">
-                            <option value=7>Last 7 Days</option>
-                            <option value=14>Last 14 Days</option>
-                            <option value=30>Last 30 Days</option>
-                            <option value=90>Last 90 Days</option>
+                            <option value=7>{% trans "Last 7 Days" %}</option>
+                            <option value=14>{% trans "Last 14 Days" %}</option>
+                            <option value=30>{% trans "Last 30 Days" %}</option>
+                            <option value=90>{% trans "Last 90 Days" %}</option>
                         </select>
                     </div>
                 </div>
@@ -218,7 +218,7 @@ $(document).ready(function() {
             renderTo: 'levelBreakdownPanel',
         },
         title: {text: null},
-        series: [{type: 'pie', name: 'Glucose Count'}],
+        series: [{type: 'pie', name: '{% trans "Glucose Count" %}'}],
         plotOptions: {
             pie: {
                 allowPointSelect: true,
